@@ -7,7 +7,7 @@ export const Home = ({onStart}) => {
 
     const handleStart = () =>{
         onStart({
-            diff, theme, timed:timed==="timed",
+            diff, theme,
         });
     };
     return (
@@ -30,14 +30,7 @@ export const Home = ({onStart}) => {
                         <option value="fish">Fish</option>
                         <option value="birds">Birds</option>
                     </select>
-                    <select 
-                    value={timed}
-                    onChange={(e)=>setTimed(e.target.value)}
-                    className="p-3 rounded bg-slate-300 text-slate-900 text-center">
-                        <option value="timed">Timed</option>
-                        <option value="not-timed">Not Timed</option>
-                        
-                    </select>
+                    
                     <button onClick={handleStart} className="p-3 rounded bg-emerald-600 hover:bg-emerald-700">
                         Play!
                     </button>

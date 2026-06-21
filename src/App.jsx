@@ -21,7 +21,8 @@ function App() {
   return (
     <>
       {page === "home" && (<Home onStart={startGame} />)}
-      {page === "game" && (<Gameboard settings={settings} />)}
+      {page === "game" && (<Gameboard settings={settings} onBackHome={() => setPage("home")}
+/>)}
     </>
   )
 }

@@ -43,6 +43,10 @@ export const Gameboard = ({settings, onBackHome}) =>{
 
         const shuffledCards = cardPairs.sort(()=>Math.random()-0.5);
         setCards(shuffledCards);
+
+        setFirstCard(null);
+        setSecondCard(null);
+        setMoves(0);
     };
 
     const handleCardClick = (card) =>{
@@ -73,7 +77,7 @@ export const Gameboard = ({settings, onBackHome}) =>{
                 resetTurn();
 
 
-            },800);
+            },900);
         }
     },[secondCard]);
 
