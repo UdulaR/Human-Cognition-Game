@@ -1,9 +1,10 @@
 import {useState} from "react"
+import hero3 from "../assets/hero3.webp";
 
 export const Home = ({onStart}) => {
     const [diff, setDiff] = useState("easy");
     const [theme, setTheme] = useState("animals");
-    const [timed, setTimed] = useState("timed");
+    
 
     const handleStart = () =>{
         onStart({
@@ -12,8 +13,15 @@ export const Home = ({onStart}) => {
     };
     return (
         <div className="min-h-screen flex flex-col items-center justify-center relative bg-gradient-to-b from-slate-900 to-slate-700">
-            <h1 className="text-white text-6xl font-bold text-center mb-8">Memory Quest</h1>
-            <div className="bg-slate-600 p-8 rounded-lg w-80 flex flex-col gap-5 shadow-lg">
+            <img
+                src={hero3}
+                alt="Background"
+                className="absolute inset-0 w-full h-full object-cover z-0"
+            />
+            <h1 className="text-white text-6xl font-bold text-center mb-8 z-10">Memory Quest</h1>
+            <div className="relative flex items-center justify-center">
+                <img src={hero3} alt="hero" className="absolute "/>
+                <div className="bg-slate-600 p-8 rounded-lg w-80 flex flex-col gap-5 shadow-lg z-10">
                 <select 
                     value={diff}
                     onChange={(e)=>setDiff(e.target.value)}
@@ -35,9 +43,11 @@ export const Home = ({onStart}) => {
                         Play!
                     </button>
 
-                
-                
+                </div>
+            
             </div>
+            
+            
 
         </div>
     )
